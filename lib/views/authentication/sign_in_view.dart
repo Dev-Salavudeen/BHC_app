@@ -43,7 +43,7 @@ class _SignInState extends State<SignIn> {
                   child: Align(
                     alignment: Alignment.center,
                     child: Image.asset(
-                      "lib/assets/logo.png",
+                      "assets/logo.png",
                     ),
                   ),
                 ),

@@ -26,7 +26,7 @@ class _NewPasswordState extends State<NewPassword> {
                 child: Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    "lib/assets/logo.png",
+                    "assets/logo.png",
 
                   ),
                 ),

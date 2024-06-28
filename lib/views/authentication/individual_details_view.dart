@@ -28,7 +28,7 @@ class _IndividualDetailsState extends State<IndividualDetails> {
               Align(
                 alignment: Alignment.center,
                 child: Image.asset(
-                  "lib/assets/logo.png",
+                  "assets/logo.png",
                   width: 150,
                   height: 150,
                 ),

@@ -68,7 +68,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                       child: Align(
                         alignment: Alignment.center,
                         child: Image.asset(
-                          "lib/assets/logo.png",
+                          "assets/logo.png",
                         ),
                       ),
                     ),
@@ -347,7 +347,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                                               border: Border.all(
                                                   color: Colors.black26)),
                                           child: Image.asset(
-                                              "lib/assets/Google.png"))),
+                                              "assets/Google.png"))),
                                   InkWell(
                                       onTap: () {
                                         print("button 3");
@@ -359,7 +359,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                                               border: Border.all(
                                                   color: Colors.black26)),
                                           child: Image.asset(
-                                              "lib/assets/FB.png"))),
+                                              "assets/FB.png"))),
                                   InkWell(
                                       onTap: () {
                                         print("button 3");
@@ -371,7 +371,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                                               border: Border.all(
                                                   color: Colors.black26)),
                                           child: Image.asset(
-                                              "lib/assets/Apple.png"))),
+                                              "assets/Apple.png"))),
                                 ],
                               ),
                             ),

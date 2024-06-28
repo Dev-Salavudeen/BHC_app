@@ -42,7 +42,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                   child: Align(
                     alignment: Alignment.center,
                     child: Image.asset(
-                      "lib/assets/logo.png",
+                      "assets/logo.png",
 
                     ),
                   ),
