@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'app.dart';
 
 void main() {
-  runApp(const BhcApp());
+  runApp( const BhcApp());
 }
 
 
