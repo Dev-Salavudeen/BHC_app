@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ListViewPage extends StatelessWidget {
-  ListViewPage({super.key});
+  final int itemcount;
+  ListViewPage({super.key, required this.itemcount});
 
   final List<String> _imagePaths = [
     'assets/SukhumvitHouse.png',
@@ -52,7 +53,7 @@ class ListViewPage extends StatelessWidget {
       body: ListView.builder(
         physics: NeverScrollableScrollPhysics(),
         padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
-        itemCount: _imagePaths.length,
+        itemCount: itemcount,
         itemBuilder: (context, index) {
           return Container(
             height: 260,

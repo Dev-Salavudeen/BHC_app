@@ -37,6 +37,10 @@ class ThemeColor {
   static const neutralLight = Color(0xFFDCE5EF);
   static const neutralExtraLight = Color(0xFFEAEFF5);
 
+  //apps color
+  static const apptheame = Color(0xFFAD2524);
+  static const profiletile = Color(0xFF8A8A8A);
+
   // These colours denote standard value states such as good, bad and warning.
   // Each color has the same basic meaning in all contexts.
   static const info = Color(0xFF2F80ED);

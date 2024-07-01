@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../themes/colors.dart';
 import 'home_page_view.dart';
-import 'my_favourite_view.dart';
+import 'favourite_view.dart';
 
 enum DashboardTab { home, myRequest, myFavourite, profile }
 
@@ -55,7 +55,7 @@ class _DashboardViewState extends State<DashboardView> {
           children: const [
             HomeView(),
             MyRequestView(),
-            MyFavouriteView(),
+            FavouriteView(),
             ProfileView()
           ],
         ),
@@ -76,12 +76,12 @@ class _DashboardViewState extends State<DashboardView> {
             BottomNavigationBarItem(
               icon: Icon(Icons.access_time_outlined),
               activeIcon: Icon(Icons.access_alarm_sharp),
-              label: "Available",
+              label: "My request",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.perm_contact_calendar_outlined),
-              activeIcon: Icon(Icons.perm_contact_calendar_sharp),
-              label: "Consults",
+              icon: Icon(Icons.favorite_border),
+              activeIcon: Icon(Icons.favorite),
+              label: "Favourite",
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person_rounded),

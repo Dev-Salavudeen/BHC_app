@@ -17,42 +17,42 @@ class AppRoutes {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => DashboardView(),
+        builder: (context, state) => const DashboardView(),
       ),
       GoRoute(
-        path: '/company_details_view', // Relative path
+        path: '/company_details_view',
         builder: (context, state) => const CompanyDetails(),
       ),
       GoRoute(
-        path: '/individual_details_view', // Relative path
+        path: '/individual_details_view',
         builder: (context, state) => const IndividualDetails(),
       ),
       GoRoute(
-        path: '/sign_in_view', // Relative path
+        path: '/sign_in_view',
         builder: (context, state) => const SignIn(),
       ),
       GoRoute(
-        path: '/forgot_password_view', // Relative path
+        path: '/forgot_password_view',
         builder: (context, state) => const ForgotPassword(),
       ),
       GoRoute(
-        path: '/new_password_view', // Relative path
+        path: '/new_password_view',
         builder: (context, state) => const NewPassword(),
       ),
       GoRoute(
-        path: '/home_page_view', // Relative path
+        path: '/home_page_view',
         builder: (context, state) => const HomeView(),
       ),
       GoRoute(
-        path: '/rent_filter_view', // Relative path
+        path: '/rent_filter_view',
         builder: (context, state) => const RentFilter(),
       ),
       GoRoute(
-        path: '/filter_view', // Relative path
+        path: '/filter_view',
         builder: (context, state) => const FilterPage(),
       ),
       GoRoute(
-        path: '/form_view', // Relative path
+        path: '/form_view',
         builder: (context, state) => StepperPage(),
       ),
       GoRoute(
