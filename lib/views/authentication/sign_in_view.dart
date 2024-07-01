@@ -44,6 +44,7 @@ class _SignInState extends State<SignIn> {
                     alignment: Alignment.center,
                     child: Image.asset(
                       "assets/logo.png",
+                      width: 110,
                     ),
                   ),
                 ),
@@ -58,7 +59,7 @@ class _SignInState extends State<SignIn> {
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Container(
-                    height: 540,
+                    height: 550,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
@@ -132,13 +133,13 @@ class _SignInState extends State<SignIn> {
                           Align(
                               alignment: Alignment.topRight,
                               child: TextButton(onPressed: (){
-                                context.go('/forget_password');
-
+                                context.go('/forgot_password_view');
                               }, child: Text("Forget password?",style: TextStyle(color: Colors.red.shade800,fontSize: 14),))),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10.0),
                             child: CustomElevatedButton(onPressed: (){
                               if (_formKey.currentState!.validate()) {
+                                context.go('/home_page_view');
 
                               }
                             }, buttonText: "Sign In", width: ScreenWidth,),
@@ -175,7 +176,7 @@ class _SignInState extends State<SignIn> {
                                             color: Colors.white,
                                             border: Border.all(color: Colors.black26)
                                         ),
-                                        child: Image.asset("lib/assets/Google.png"))
+                                        child: Image.asset("assets/Google.png",width: 40))
                                 ),
                                 InkWell(
                                     onTap: (){
@@ -187,7 +188,7 @@ class _SignInState extends State<SignIn> {
                                             color: Colors.white,
                                             border: Border.all(color: Colors.black26)
                                         ),
-                                        child: Image.asset("lib/assets/FB.png"))
+                                        child: Image.asset("assets/FB.png",width: 40))
                                 ),
                                 InkWell(
                                     onTap: (){
@@ -199,7 +200,7 @@ class _SignInState extends State<SignIn> {
                                             color: Colors.white,
                                             border: Border.all(color: Colors.black26)
                                         ),
-                                        child: Image.asset("lib/assets/Apple.png"))
+                                        child: Image.asset("assets/Apple.png",width: 40,))
                                 ),
                               ],
                             ),

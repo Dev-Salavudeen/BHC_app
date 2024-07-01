@@ -107,6 +107,7 @@ class _NewPasswordState extends State<NewPassword> {
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 10.0),
                           child: CustomElevatedButton(onPressed: (){
+                            context.go('/home_page_view');
 
 
                           }, buttonText: "Confirm", width: ScreenWidth,),

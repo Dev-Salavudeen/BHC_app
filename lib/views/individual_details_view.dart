@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../widgets/custom_elevated_button.dart';
+import '../widgets/custom_elevated_button.dart';
 import 'package:go_router/go_router.dart';
 
 
@@ -428,7 +428,7 @@ class _IndividualDetailsState extends State<IndividualDetails> {
                           child: CustomElevatedButton(
                             onPressed: () {
 
-                              context.go('/sign_in');
+                              context.go('/sign_in_view');
 
 
                             },

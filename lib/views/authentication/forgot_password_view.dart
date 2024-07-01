@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import '../../widgets/custom_elevated_button.dart';
 import 'package:go_router/go_router.dart';
 
-class ForgetPassword extends StatefulWidget {
-  const ForgetPassword({super.key});
+class ForgotPassword extends StatefulWidget {
+  const ForgotPassword({super.key});
 
   @override
-  State<ForgetPassword> createState() => _ForgetPasswordState();
+  State<ForgotPassword> createState() => _ForgotPasswordState();
 }
 
-class _ForgetPasswordState extends State<ForgetPassword> {
+class _ForgotPasswordState extends State<ForgotPassword> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
 
@@ -107,7 +106,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                             padding: const EdgeInsets.symmetric(vertical: 10.0),
                             child: CustomElevatedButton(onPressed: (){
                               if (_formKey.currentState!.validate()) {
-                                context.go('/new_password');
+                                context.go('/new_password_view');
 
                               }
                             }, buttonText: "Send", width: ScreenWidth,),

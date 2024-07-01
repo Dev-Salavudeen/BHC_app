@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../widgets/custom_elevated_button.dart';
+import '../widgets/custom_elevated_button.dart';
 
 
 class CompanyDetails extends StatefulWidget {
@@ -251,7 +251,7 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                           padding: const EdgeInsets.symmetric(vertical: 20.0),
                           child: CustomElevatedButton(
                             onPressed: () {
-                              context.go('/sign_in');
+                              context.go('/sign_in_view');
 
 
                             },

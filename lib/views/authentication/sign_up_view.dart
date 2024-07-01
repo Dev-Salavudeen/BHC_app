@@ -69,6 +69,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                         alignment: Alignment.center,
                         child: Image.asset(
                           "assets/logo.png",
+                          width: 110,
                         ),
                       ),
                     ),
@@ -239,13 +240,17 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                                   const EdgeInsets.symmetric(vertical: 10.0),
                               child: CustomElevatedButton(
                                 onPressed: () {
-                                  if (DefaultTabController.of(context).index ==
-                                      0) {
-                                    User data = getUpdate();
-                                    context.go('/company_details');
-                                  } else {
-                                    context.go('/individual_details');
+
+                                  if (_formKey.currentState!.validate()) {
+                                    if (DefaultTabController.of(context).index ==
+                                        0) {
+                                      User data = getUpdate();
+                                      context.go('/company_details_view');
+                                    } else {
+                                      context.go('/individual_details_view');
+                                    }
                                   }
+
                                 },
                                 buttonText: "Sign Up",
                                 width: ScreenWidth,
@@ -347,7 +352,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                                               border: Border.all(
                                                   color: Colors.black26)),
                                           child: Image.asset(
-                                              "assets/Google.png"))),
+                                              "assets/Google.png",width: 40,))),
                                   InkWell(
                                       onTap: () {
                                         print("button 3");
@@ -359,7 +364,8 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                                               border: Border.all(
                                                   color: Colors.black26)),
                                           child: Image.asset(
-                                              "assets/FB.png"))),
+                                              "assets/FB.png",
+                                          width: 40,))),
                                   InkWell(
                                       onTap: () {
                                         print("button 3");
@@ -371,7 +377,8 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                                               border: Border.all(
                                                   color: Colors.black26)),
                                           child: Image.asset(
-                                              "assets/Apple.png"))),
+                                              "assets/Apple.png",
+                                          width: 40,))),
                                 ],
                               ),
                             ),
@@ -384,7 +391,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                                 ),
                                 TextButton(
                                     onPressed: () {
-                                      context.go('/sign_in');
+                                      context.go('/sign_in_view');
                                     },
                                     child: Text(
                                       "Sign in",
