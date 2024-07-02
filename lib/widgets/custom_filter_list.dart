@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomFilterList extends StatelessWidget {
   CustomFilterList({super.key});
@@ -59,36 +61,42 @@ class CustomFilterList extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Container(
-                  height: 170,
-                  width: 365,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage(_imagePaths[index]),
-                      fit: BoxFit.cover,
+                GestureDetector(
+                  onTap: (){
+                    context.go('/home_details_view');
+
+                  },
+                  child: Container(
+                    height: 170,
+                    width: 365,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        image: AssetImage(_imagePaths[index]),
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                  ),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        right: 10,
-                        top: 10,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: const Color(0xFFFFFFFF),
-                          ),
-                          height: 32,
-                          width: 32,
-                          child: IconButton(
-                            onPressed: () {},
-                            icon: const Icon(Icons.favorite_border, size: 17),
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          right: 10,
+                          top: 10,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: const Color(0xFFFFFFFF),
+                            ),
+                            height: 32,
+                            width: 32,
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.favorite_border, size: 17),
+                            ),
                           ),
                         ),
-                      ),
 
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 Padding(

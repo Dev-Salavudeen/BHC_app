@@ -1,10 +1,12 @@
+
 import 'package:bhc_app/views/my_request_view.dart';
 import 'package:bhc_app/views/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../themes/colors.dart';
-import 'home_page_view.dart';
+import '../widgets/custom_bottom_nav_bar.dart';
 import 'favourite_view.dart';
+import 'home_page_view.dart';
 
 enum DashboardTab { home, myRequest, myFavourite, profile }
 
@@ -59,36 +61,50 @@ class _DashboardViewState extends State<DashboardView> {
             ProfileView()
           ],
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Colors.red.shade800,
-          currentIndex: currentTab.index,
-          backgroundColor: ThemeColor.white,
-          showUnselectedLabels: true,
-          showSelectedLabels: false,
-          type: BottomNavigationBarType.fixed,
-          onTap: _onTabChanged,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              activeIcon: Icon(Icons.home_filled),
-              label: "Home",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.access_time_outlined),
-              activeIcon: Icon(Icons.access_alarm_sharp),
-              label: "My request",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_border),
-              activeIcon: Icon(Icons.favorite),
-              label: "Favourite",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person_rounded),
-              activeIcon: Icon(Icons.person_rounded),
-              label: "Profile",
-            ),
-          ],
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+            color: ThemeColor.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 8,
+                spreadRadius: 1,
+              ),
+            ],
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              CustomBottomNavBarItem(
+                icon: Icons.home_outlined,
+                activeIcon: Icons.home_outlined,
+                label: "Home",
+                isActive: currentTab == DashboardTab.home,
+                onTap: () => _onTabChanged(0),
+              ),
+              CustomBottomNavBarItem(
+                icon: Icons.request_page,
+                activeIcon: Icons.request_page,
+                label: "Request",
+                isActive: currentTab == DashboardTab.myRequest,
+                onTap: () => _onTabChanged(1),
+              ),
+              CustomBottomNavBarItem(
+                icon: Icons.favorite_border,
+                activeIcon: Icons.favorite_border,
+                label: "Favourite",
+                isActive: currentTab == DashboardTab.myFavourite,
+                onTap: () => _onTabChanged(2),
+              ),
+              CustomBottomNavBarItem(
+                icon: Icons.person_outline_rounded,
+                activeIcon: Icons.person_outline_rounded,
+                label: "Profile",
+                isActive: currentTab == DashboardTab.profile,
+                onTap: () => _onTabChanged(3),
+              ),
+            ],
+          ),
         ),
       ),
     );

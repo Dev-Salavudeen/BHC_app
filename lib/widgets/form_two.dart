@@ -78,21 +78,21 @@ class Page2 extends StatelessWidget {
                         Row(
                           children: [
                             Expanded(child: CustomTextFormField(lableText: 'Plot/Unit no. rented', lablecolor: Colors.grey,)),
-                            Expanded(child: CustomToggleButton(isSelected: [], onPressed: (int ) {  },)),
+                            Expanded(child: CustomToggleButton(),)
                           ],
                         ),
                         Spacer(),
                         Row(
                           children: [
                             Expanded(child: CustomTextFormField(lableText: 'Plot/unit no. purchased', lablecolor: Colors.grey,)),
-                            Expanded(child: CustomToggleButton(isSelected: [], onPressed: (int ) {  },)),
+                            Expanded(child: CustomToggleButton(),)
                           ],
                         ),
                         Spacer(),
                         Row(
                           children: [
                             Expanded(child: CustomTextFormField(lableText: 'House type applied for', lablecolor: Colors.grey,)),
-                            Expanded(child: CustomToggleButton(isSelected: [], onPressed: (int ) {  },)),
+                            Expanded(child: CustomToggleButton(),)
                           ],
                         ),
                         CustomButton2(

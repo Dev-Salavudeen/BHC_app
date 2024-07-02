@@ -4,6 +4,8 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../themes/colors.dart';
 import '../widgets/elevated_button.dart';
 import 'favourite_view.dart';
+import 'package:go_router/go_router.dart';
+
 
 class HomeDetailsView extends StatefulWidget {
   const HomeDetailsView({super.key});
@@ -496,11 +498,15 @@ class _HomeDetailsViewState extends State<HomeDetailsView> {
                 child: CustomButton(
                   buttontext: 'Book Now',
                   onPressed: () {
-                    Navigator.push(
+
+                    context.go('/form_view');
+
+
+                    /*Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const ProfileView()),
-                    );
+                    );*/
                   },
                   buttoncolor: ThemeColor.apptheame,
                 ),

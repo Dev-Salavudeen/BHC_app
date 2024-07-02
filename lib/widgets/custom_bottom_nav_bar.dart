@@ -1,55 +1,32 @@
+
 import 'package:flutter/material.dart';
 
-class CustomBottomNavBar extends StatefulWidget {
-  final int currentIndex;
-  final Function(int) onTap;
+class CustomBottomNavBarItem extends StatelessWidget {
+  final IconData icon;
+  final IconData activeIcon;
+  final String label;
+  final bool isActive;
+  final VoidCallback onTap;
 
-  const CustomBottomNavBar({
+  const CustomBottomNavBarItem({
     Key? key,
-    required this.currentIndex,
+    required this.icon,
+    required this.activeIcon,
+    required this.label,
+    required this.isActive,
     required this.onTap,
   }) : super(key: key);
 
   @override
-  _CustomBottomNavBarState createState() => _CustomBottomNavBarState();
-}
-
-class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
-  @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      currentIndex: widget.currentIndex,
-      onTap: widget.onTap,
-      selectedItemColor: Colors.red.shade800,
-      unselectedItemColor: Colors.grey,
-      showSelectedLabels: true,
-      showUnselectedLabels: true,
-      items: [
-        _buildBottomNavigationBarItem(
-            icon: Icons.home, label: 'Home', index: 0),
-        _buildBottomNavigationBarItem(
-            icon: Icons.book_outlined, label: 'Search', index: 1),
-        _buildBottomNavigationBarItem(
-            icon: Icons.favorite_border, label: 'Favourite', index: 2),
-        _buildBottomNavigationBarItem(
-            icon: Icons.person_2_outlined, label: 'Profile', index: 3),
-      ],
-    );
-  }
-
-  BottomNavigationBarItem _buildBottomNavigationBarItem({
-    required IconData icon,
-    required String label,
-    required int index,
-  }) {
-    bool isActive = widget.currentIndex == index;
-
-    return BottomNavigationBarItem(
-      icon: Column(
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
-            icon,
+            isActive ? activeIcon : icon,
             color: isActive ? Colors.red.shade800 : Colors.grey,
             size: 30,
           ),
@@ -60,9 +37,13 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               width: 10,
               color: Colors.red.shade800,
             ),
+          if (!isActive)
+            Text(
+              label,
+              style: TextStyle(color: Colors.grey),
+            ),
         ],
       ),
-      label: isActive ? '' : label,
     );
   }
 }
