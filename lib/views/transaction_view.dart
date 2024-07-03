@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../widgets/custom_transaction_page.dart';
 
@@ -17,7 +18,10 @@ class _TransactionPageState extends State<TransactionPage> {
       appBar: AppBar(
         backgroundColor: Color(0xFFAD2524),
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.go('/profile_view');
+
+            },
             icon: Icon(
               Icons.arrow_back_ios_new,
               color: Color(0xFFFFFFFF),

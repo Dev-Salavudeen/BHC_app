@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'custom_double_button.dart';
+import 'package:go_router/go_router.dart';
+import 'double_button.dart';
 import 'custom_form_container.dart';
 import 'custom_form_text.dart';
 import 'custom_textformfield.dart';
@@ -83,7 +84,10 @@ class Page3 extends StatelessWidget {
                           onPressed1: onBack,
                           buttonText1: 'Back',
                           buttonText2: 'Confirm',
-                          onPressed2: () {},
+                          onPressed2: () {
+                            context.go('/select_payment_method_view');
+
+                          },
                         ),
                       ],
                     ),

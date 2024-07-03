@@ -139,7 +139,7 @@ class _SignInState extends State<SignIn> {
                             padding: const EdgeInsets.symmetric(vertical: 10.0),
                             child: CustomElevatedButton(onPressed: (){
                               if (_formKey.currentState!.validate()) {
-                                context.go('/home_page_view');
+                                context.go('/dashboard_view');
 
                               }
                             }, buttonText: "Sign In", width: ScreenWidth,),

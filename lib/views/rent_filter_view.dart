@@ -24,7 +24,9 @@ class _HomePageState extends State<RentFilter> {
       appBar: AppBar(
         backgroundColor: Colors.red.shade900,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            context.go('/home_page_view');
+          },
           icon: Icon(
             Icons.arrow_back_ios,
             color: Colors.white,

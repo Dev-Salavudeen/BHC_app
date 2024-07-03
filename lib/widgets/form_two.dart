@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'custom_double_button.dart';
+import 'double_button.dart';
 import 'custom_form_text.dart';
 import 'custom_textformfield.dart';
 import 'custom_toggle_button.dart';

@@ -33,7 +33,10 @@ class _HomeDetailsViewState extends State<HomeDetailsView> {
             Icons.arrow_back_ios,
             color: Colors.white,
           ),
-          onPressed: () {},
+          onPressed: () {
+            context.go('/filter_view');
+
+          },
         ),
       ),
       body: SingleChildScrollView(

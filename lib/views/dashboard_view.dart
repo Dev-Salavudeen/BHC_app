@@ -1,10 +1,9 @@
-
-import 'package:bhc_app/views/my_request_view.dart';
 import 'package:bhc_app/views/profile_view.dart';
+import 'package:bhc_app/views/request_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../themes/colors.dart';
-import '../widgets/custom_bottom_nav_bar.dart';
+import '../widgets/bottom_nav_bar.dart';
 import 'favourite_view.dart';
 import 'home_page_view.dart';
 
@@ -56,7 +55,7 @@ class _DashboardViewState extends State<DashboardView> {
           physics: const NeverScrollableScrollPhysics(),
           children: const [
             HomeView(),
-            MyRequestView(),
+            RequestPage(),
             FavouriteView(),
             ProfileView()
           ],

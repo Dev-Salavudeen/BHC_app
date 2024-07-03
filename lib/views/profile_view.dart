@@ -82,7 +82,7 @@ class _ProfileViewState extends State<ProfileView> {
               title: 'Transaction',
               leadingIcon: Icons.wallet_rounded,
               onpressed: () {
-
+                context.go('/transaction_view');
 
               },
             ),
@@ -135,7 +135,7 @@ class _ProfileViewState extends State<ProfileView> {
         leading: Icon(
           leadingIcon,
           color: ThemeColor.profiletile,
-        ),
+        ),onTap: onpressed,
       ),
     );
   }

@@ -1,7 +1,9 @@
-import 'package:go_router/go_router.dart';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
 import '../widgets/custom_home_grid.dart';
 import '../widgets/custom_home_list.dart';
 
@@ -36,8 +38,8 @@ class _HomeViewState extends State<HomeView> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: const Color(0xFFAD2524),
-          title: const Padding(
-            padding: EdgeInsets.only(top: 5),
+          title: Padding(
+            padding: const EdgeInsets.only(top: 5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -66,16 +68,24 @@ class _HomeViewState extends State<HomeView> {
                   children: [
                     Row(
                       children: [
-                        Icon(
-                          Icons.notifications_none_sharp,
-                          color: Colors.white,
-                          size: 30,
+                        IconButton(
+                          onPressed: () {
+
+                          },
+                          icon: Icon(Icons.notifications_none_sharp),
                         ),
                         SizedBox(width: 15),
-                        Icon(
-                          Icons.message_outlined,
-                          color: Colors.white,
-                          size: 30,
+                        IconButton(
+                          onPressed: () {
+                            context.go('/message_home_view');
+
+
+                          },
+                          icon: Icon(
+                            Icons.message_outlined,
+                            color: Colors.white,
+                            size: 30,
+                          ),
                         ),
                       ],
                     ),
@@ -152,7 +162,7 @@ class _HomeViewState extends State<HomeView> {
                                 options: CarouselOptions(
                                   autoPlay: true,
                                   autoPlayAnimationDuration:
-                                      Duration(seconds: 2),
+                                  Duration(seconds: 2),
                                   autoPlayInterval: Duration(seconds: 3),
                                   viewportFraction: 1.1,
                                   initialPage: currentindex,
@@ -238,6 +248,7 @@ class _HomeViewState extends State<HomeView> {
               child: Padding(
                 padding: const EdgeInsets.only(top: 10, bottom: 10),
                 child: Text(
+
                   'Popular near by',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
@@ -245,7 +256,7 @@ class _HomeViewState extends State<HomeView> {
             ),
             SliverFillRemaining(
               child:
-                  _isListView ? ListViewPage(itemcount: 3) : CustomGridView(),
+              _isListView ? ListViewPage(itemcount: 3) : CustomGridView(),
             ),
           ],
         ),
