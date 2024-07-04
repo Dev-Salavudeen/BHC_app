@@ -6,13 +6,14 @@ class SecondList extends StatefulWidget {
   final String Text1;
   final IconData icon;
   final String imagepath;
-  const SecondList(
-      {super.key,
-        required this.Text,
-        required this.Text1,
-        required this.icon,
-        required this.imagepath,
-        required String text, });
+  const SecondList({
+    super.key,
+    required this.Text,
+    required this.Text1,
+    required this.icon,
+    required this.imagepath,
+    required String text,
+  });
 
   @override
   State<SecondList> createState() => _SecondListState();
@@ -24,8 +25,8 @@ class _SecondListState extends State<SecondList> {
     return Padding(
       padding: const EdgeInsets.only(top: 20, right: 20),
       child: Container(
-        height: 160,
-        width: 370,
+        height: 135,
+        width: double.infinity,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: Colors.white,
@@ -34,7 +35,7 @@ class _SecondListState extends State<SecondList> {
                 color: Colors.grey.withOpacity(0.5),
                 blurRadius: 8,
                 spreadRadius: 3,
-                offset: Offset(0, 2),
+                offset: const Offset(0, 2),
               ),
             ]),
         child: Row(
@@ -42,8 +43,8 @@ class _SecondListState extends State<SecondList> {
             Padding(
               padding: EdgeInsets.only(left: 15),
               child: Container(
-                height: 120,
-                width: 120,
+                height: 100,
+                width: 100,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.blueAccent,
@@ -53,20 +54,20 @@ class _SecondListState extends State<SecondList> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 20, top: 30),
+              padding: const EdgeInsets.only(left: 20, top: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     widget.Text,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.black87,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 5),
+                    padding: const EdgeInsets.only(top: 2),
                     child: Row(
                       children: [
                         Icon(
@@ -75,12 +76,15 @@ class _SecondListState extends State<SecondList> {
                         ),
                         Text(
                           widget.Text1,
-                          style: TextStyle(fontSize: 14, color: Colors.grey),
+                          style: const TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.grey),
                         )
                       ],
                     ),
                   ),
-                  ElevatedButtonOne(),
+                  const ElevatedButtonOne(),
                 ],
               ),
             ),

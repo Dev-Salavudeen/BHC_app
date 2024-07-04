@@ -28,8 +28,9 @@ class _FirstListState extends State<FirstList> {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: widget.isSelected ? Colors.red.shade900 : Colors.white,
-              border: Border.all(color: Colors.grey.shade300,)
-          ),
+              border: Border.all(
+                color: Colors.grey.shade300,
+              )),
           child: Center(
               child: Text(
                 widget.Text,

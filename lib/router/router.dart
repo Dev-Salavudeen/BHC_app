@@ -1,4 +1,3 @@
-
 import 'package:bhc_app/views/authentication/sign_in_view.dart';
 import 'package:bhc_app/views/authentication/sign_up_view.dart';
 import 'package:bhc_app/views/dashboard_view.dart';
@@ -25,7 +24,7 @@ class AppRoutes {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => SignUp(),
+        builder: (context, state) => DashboardView(),
       ),
       GoRoute(
         path: '/dashboard_view',
@@ -57,11 +56,11 @@ class AppRoutes {
       ),
       GoRoute(
         path: '/message_home_view', // Relative path
-        builder: (context, state) =>  MessageHomeView(),
+        builder: (context, state) => MessageHomeView(),
       ),
       GoRoute(
         path: '/message_view', // Relative path
-        builder: (context, state) =>  MessagePage(),
+        builder: (context, state) => MessagePage(),
       ),
       GoRoute(
         path: '/rent_filter_view', // Relative path
@@ -87,10 +86,10 @@ class AppRoutes {
         path: '/payment_success_view', // Relative path
         builder: (context, state) => PaymentDoneView(),
       ),
-      /*GoRoute(
+      GoRoute(
         path: '/profile_view', // Relative path
         builder: (context, state) => ProfileView(),
-      ),*/
+      ),
       GoRoute(
         path: '/transaction_view', // Relative path
         builder: (context, state) => TransactionPage(),

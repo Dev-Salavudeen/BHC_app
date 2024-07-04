@@ -1,15 +1,16 @@
+import 'package:bhc_app/themes/colors.dart';
 import 'package:flutter/material.dart';
 import '../widgets/request_list.dart';
 import '../widgets/request_list_two.dart';
 
-class RequestPage extends StatefulWidget {
-  const RequestPage({super.key});
+class MyRequestView extends StatefulWidget {
+  const MyRequestView({super.key});
 
   @override
-  State<RequestPage> createState() => _RequestPageState();
+  State<MyRequestView> createState() => _MyRequestViewState();
 }
 
-class _RequestPageState extends State<RequestPage> {
+class _MyRequestViewState extends State<MyRequestView> {
   List<String> allStatuses = [
     'All',
     'Pending',
@@ -30,9 +31,9 @@ class _RequestPageState extends State<RequestPage> {
   ];
 
   List<String> images = [
-    '/pending.png',
-    '/approved.png',
-    '/rejected.png',
+    'assets/myRequest.png',
+    'assets/myRequest.png',
+    'assets/myRequest.png',
   ];
 
   String filterStatus = 'All';
@@ -64,15 +65,15 @@ class _RequestPageState extends State<RequestPage> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red.shade900,
+        backgroundColor: ThemeColor.apptheame,
         leading: IconButton(
           onPressed: () {},
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back_ios,
             color: Colors.white,
           ),
         ),
-        title: Text(
+        title: const Text(
           'My Requests',
           style: TextStyle(
             color: Colors.white,
@@ -80,51 +81,51 @@ class _RequestPageState extends State<RequestPage> {
           ),
         ),
       ),
-      body: Stack(children: [
-        SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.only(left: 15, top: 7),
-            child: Column(
-              children: [
-                Container(
-                  height: 41,
-                  width: swidth,
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 10),
-                    child: ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: allStatuses.length,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (BuildContext context, int index) {
-                          return FirstList(
-                            Text: allStatuses[index],
-                            isSelected: filterStatus == allStatuses[index],
-                            onTap: () {
-                              _setFilterStatus(allStatuses[index]);
-                            },
-                          );
-                        }),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 15, top: 7),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 41,
+                width: swidth,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: allStatuses.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (BuildContext context, int index) {
+                      return FirstList(
+                        Text: allStatuses[index],
+                        isSelected: filterStatus == allStatuses[index],
+                        onTap: () {
+                          _setFilterStatus(allStatuses[index]);
+                        },
+                      );
+                    },
                   ),
                 ),
-                ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: filteredIndices.length,
-                    //  physics: NeverScrollableScrollPhysics(),
-                    itemBuilder: (BuildContext context, int index) {
-                      int filteredIndex = filteredIndices[index];
-                      return SecondList(
-                        text: propertyNames[filteredIndex],
-                        Text: locations[filteredIndex],
-                        icon: Icons.location_on,
-                        imagepath: images[filteredIndex],
-                        Text1: locations[filteredIndex],
-                      );
-                    }),
-              ],
-            ),
+              ),
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: filteredIndices.length,
+                //  physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (BuildContext context, int index) {
+                  int filteredIndex = filteredIndices[index];
+                  return SecondList(
+                    text: propertyNames[filteredIndex],
+                    Text: locations[filteredIndex],
+                    icon: Icons.location_on,
+                    imagepath: images[filteredIndex],
+                    Text1: locations[filteredIndex],
+                  );
+                },
+              ),
+            ],
           ),
         ),
-      ]),
+      ),
     );
   }
 }

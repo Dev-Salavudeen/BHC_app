@@ -50,6 +50,7 @@ class ThemeColor {
 
   static const teal = Color(0xFF00BFA5);
   static const indigo = Color(0xFF2962FF);
+  static const pendingButton = Color(0xFFEE9204);
 }
 
 // ColorScheme kLightColorSchema = ColorScheme.fromSwatch(

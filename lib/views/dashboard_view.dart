@@ -55,7 +55,7 @@ class _DashboardViewState extends State<DashboardView> {
           physics: const NeverScrollableScrollPhysics(),
           children: const [
             HomeView(),
-            RequestPage(),
+            MyRequestView(),
             FavouriteView(),
             ProfileView()
           ],

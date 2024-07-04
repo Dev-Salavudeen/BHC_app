@@ -1,3 +1,4 @@
+import 'package:bhc_app/themes/colors.dart';
 import 'package:flutter/material.dart';
 
 class ElevatedButtonOne extends StatefulWidget {
@@ -14,16 +15,17 @@ class _ElevatedButtonOneState extends State<ElevatedButtonOne> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(top: 10),
       child: Row(
         children: [
           Container(
-            height: 35,
-            width: 100,
+            height: 30,
+            width: 92,
             decoration: BoxDecoration(
-              color: isPendingSelected ? Colors.orange : Colors.white,
+              color:
+              isPendingSelected ? ThemeColor.pendingButton : Colors.white,
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: Colors.grey.shade300),
+              border: Border.all(color: ThemeColor.pendingButton),
             ),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -48,14 +50,17 @@ class _ElevatedButtonOneState extends State<ElevatedButtonOne> {
               ),
             ),
           ),
-          SizedBox(width: 10), // Add some space between the buttons
+          const SizedBox(width: 10),
           Container(
-            height: 35,
-            width: 100,
+            height: 30,
+            width: 92,
             decoration: BoxDecoration(
-              color: isCancelSelected ? Colors.orange : Colors.white,
+              color: isCancelSelected ? ThemeColor.apptheame : Colors.white,
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: Colors.grey.shade300),
+              border: Border.all(
+                  color: isPendingSelected
+                      ? ThemeColor.apptheame
+                      : ThemeColor.apptheame),
             ),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -75,7 +80,7 @@ class _ElevatedButtonOneState extends State<ElevatedButtonOne> {
               child: Text(
                 "Cancel",
                 style: TextStyle(
-                  color: isCancelSelected ? Colors.white : Colors.black,
+                  color: isCancelSelected ? Colors.white : ThemeColor.apptheame,
                 ),
               ),
             ),

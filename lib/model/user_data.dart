@@ -70,3 +70,7 @@ class Individual extends User {
     return json;
   }
 }
+
+
+
+

@@ -83,7 +83,6 @@ class _ProfileViewState extends State<ProfileView> {
               leadingIcon: Icons.wallet_rounded,
               onpressed: () {
                 context.go('/transaction_view');
-
               },
             ),
             buildListTileWithBorder(
@@ -135,7 +134,8 @@ class _ProfileViewState extends State<ProfileView> {
         leading: Icon(
           leadingIcon,
           color: ThemeColor.profiletile,
-        ),onTap: onpressed,
+        ),
+        onTap: onpressed,
       ),
     );
   }

@@ -46,9 +46,12 @@ class _HomeViewState extends State<HomeView> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "current location",
-                      style: TextStyle(color: Colors.white, fontSize: 12),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "current location",
+                        style: TextStyle(color: Colors.white, fontSize: 12),
+                      ),
                     ),
                     Row(
                       children: [
@@ -96,6 +99,7 @@ class _HomeViewState extends State<HomeView> {
           ),
         ),
         body: CustomScrollView(
+
           slivers: [
             SliverToBoxAdapter(
               child: Column(
@@ -122,6 +126,7 @@ class _HomeViewState extends State<HomeView> {
                                     offset: Offset(0, 3),
                                   ),
                                 ],
+
                                 color: Colors.white,
                               ),
                               child: TabBar(
@@ -246,7 +251,7 @@ class _HomeViewState extends State<HomeView> {
             ),
             SliverToBoxAdapter(
               child: Padding(
-                padding: const EdgeInsets.only(top: 10, bottom: 10),
+                padding: const EdgeInsets.all(8.0),
                 child: Text(
 
                   'Popular near by',

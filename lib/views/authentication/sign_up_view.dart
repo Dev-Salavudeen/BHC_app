@@ -136,271 +136,273 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(15.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 10.0),
-                              child: Text(
-                                "Sign Up Details",
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.w400),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 10.0),
-                              child: TextFormField(
-                                controller: _emailcontroller,
-                                decoration: InputDecoration(
-                                  labelText: 'E-mail/phone',
-                                  labelStyle: TextStyle(color: Colors.grey),
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(15.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Colors.grey, width: 1.0),
-                                    borderRadius: BorderRadius.circular(15.0),
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Colors.grey.withOpacity(0.5),
-                                        width: 1.0),
-                                    borderRadius: BorderRadius.circular(15.0),
-                                  ),
-                                ),
-                                keyboardType: TextInputType.emailAddress,
-                                inputFormatters: [
-                                  FilteringTextInputFormatter.allow(
-                                      RegExp(r'[0-9a-zA-Z@.]')),
-                                ],
-                                validator: _validateEmailPhone,
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 10.0),
-                              child: TextFormField(
-                                controller: _codecontroller,
-                                decoration: InputDecoration(
-                                  labelText: 'Verification Code',
-                                  labelStyle: TextStyle(color: Colors.grey),
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(15.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Colors.grey, width: 1.0),
-                                    borderRadius: BorderRadius.circular(15.0),
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Colors.grey.withOpacity(0.5),
-                                        width: 1.0),
-                                    borderRadius: BorderRadius.circular(15.0),
-                                  ),
+                        child: SingleChildScrollView(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Padding(
+                                padding:
+                                    EdgeInsets.symmetric(vertical: 10.0),
+                                child: Text(
+                                  "Sign Up Details",
+                                  style: TextStyle(
+                                      fontSize: 18, fontWeight: FontWeight.w400),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 10.0),
-                              child: TextFormField(
-                                controller: _passwordcontroller,
-                                decoration: InputDecoration(
-                                  labelText: 'Password',
-                                  labelStyle: TextStyle(color: Colors.grey),
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(15.0),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 10.0),
+                                child: TextFormField(
+                                  controller: _emailcontroller,
+                                  decoration: InputDecoration(
+                                    labelText: 'E-mail/phone',
+                                    labelStyle: TextStyle(color: Colors.grey),
+                                    floatingLabelBehavior:
+                                        FloatingLabelBehavior.always,
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(15.0),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.grey, width: 1.0),
+                                      borderRadius: BorderRadius.circular(15.0),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.grey.withOpacity(0.5),
+                                          width: 1.0),
+                                      borderRadius: BorderRadius.circular(15.0),
+                                    ),
                                   ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Colors.grey, width: 1.0),
-                                    borderRadius: BorderRadius.circular(15.0),
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Colors.grey.withOpacity(0.5),
-                                        width: 1.0),
-                                    borderRadius: BorderRadius.circular(15.0),
-                                  ),
+                                  keyboardType: TextInputType.emailAddress,
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.allow(
+                                        RegExp(r'[0-9a-zA-Z@.]')),
+                                  ],
+                                  validator: _validateEmailPhone,
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 10.0),
-                              child: CustomElevatedButton(
-                                onPressed: () {
-
-                                  if (_formKey.currentState!.validate()) {
-                                    if (DefaultTabController.of(context).index ==
-                                        0) {
-                                      User data = getUpdate();
-                                      context.go('/company_details_view');
-                                    } else {
-                                      context.go('/individual_details_view');
-                                    }
-                                  }
-
-                                },
-                                buttonText: "Sign Up",
-                                width: ScreenWidth,
-                              ),
-                            ),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      _isChecked = !_isChecked;
-                                    });
-                                  },
-                                  child: Checkbox(
-                                    value: _isChecked,
-                                    onChanged: (bool? value) {
-                                      setState(() {
-                                        _isChecked = value ?? false;
-                                      });
-                                    },
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 10.0),
+                                child: TextFormField(
+                                  controller: _codecontroller,
+                                  decoration: InputDecoration(
+                                    labelText: 'Verification Code',
+                                    labelStyle: TextStyle(color: Colors.grey),
+                                    floatingLabelBehavior:
+                                        FloatingLabelBehavior.always,
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(15.0),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.grey, width: 1.0),
+                                      borderRadius: BorderRadius.circular(15.0),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.grey.withOpacity(0.5),
+                                          width: 1.0),
+                                      borderRadius: BorderRadius.circular(15.0),
                                     ),
                                   ),
                                 ),
-                                Text(
-                                  'I agree to ',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                TextButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    'Terms of Use',
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.red.shade800),
-                                  ),
-                                  style: ButtonStyle(
-                                    padding: MaterialStateProperty.all(
-                                        EdgeInsets.zero),
-                                  ),
-                                ),
-                                Text(
-                                  ' or ',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                TextButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    'Privacy Policy',
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.red.shade800),
-                                  ),
-                                  style: ButtonStyle(
-                                    padding: MaterialStateProperty.all(
-                                        EdgeInsets.zero),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 10.0),
+                                child: TextFormField(
+                                  controller: _passwordcontroller,
+                                  decoration: InputDecoration(
+                                    labelText: 'Password',
+                                    labelStyle: TextStyle(color: Colors.grey),
+                                    floatingLabelBehavior:
+                                        FloatingLabelBehavior.always,
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(15.0),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.grey, width: 1.0),
+                                      borderRadius: BorderRadius.circular(15.0),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.grey.withOpacity(0.5),
+                                          width: 1.0),
+                                      borderRadius: BorderRadius.circular(15.0),
+                                    ),
                                   ),
                                 ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                  height: 1,
-                                  width: 100,
-                                  color: Colors.grey,
-                                  margin: EdgeInsets.symmetric(horizontal: 10),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 10.0),
+                                child: CustomElevatedButton(
+                                  onPressed: () {
+
+                                    if (_formKey.currentState!.validate()) {
+                                      if (DefaultTabController.of(context).index ==
+                                          0) {
+                                        User data = getUpdate();
+                                        context.go('/company_details_view');
+                                      } else {
+                                        context.go('/individual_details_view');
+                                      }
+                                    }
+
+                                  },
+                                  buttonText: "Sign Up",
+                                  width: ScreenWidth,
                                 ),
-                                Text(
-                                  "Or Sign in with",
-                                  style: TextStyle(color: Colors.grey),
-                                ),
-                                Container(
-                                  height: 1,
-                                  width: 100,
-                                  color: Colors.grey,
-                                  margin: EdgeInsets.symmetric(horizontal: 10),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 90.0, vertical: 20),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  InkWell(
-                                      onTap: () {
-                                        print("button 3");
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        _isChecked = !_isChecked;
+                                      });
+                                    },
+                                    child: Checkbox(
+                                      value: _isChecked,
+                                      onChanged: (bool? value) {
+                                        setState(() {
+                                          _isChecked = value ?? false;
+                                        });
                                       },
-                                      child: Container(
-                                          decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              color: Colors.white,
-                                              border: Border.all(
-                                                  color: Colors.black26)),
-                                          child: Image.asset(
-                                              "assets/Google.png",width: 40,))),
-                                  InkWell(
-                                      onTap: () {
-                                        print("button 3");
-                                      },
-                                      child: Container(
-                                          decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              color: Colors.white,
-                                              border: Border.all(
-                                                  color: Colors.black26)),
-                                          child: Image.asset(
-                                              "assets/FB.png",
-                                          width: 40,))),
-                                  InkWell(
-                                      onTap: () {
-                                        print("button 3");
-                                      },
-                                      child: Container(
-                                          decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              color: Colors.white,
-                                              border: Border.all(
-                                                  color: Colors.black26)),
-                                          child: Image.asset(
-                                              "assets/Apple.png",
-                                          width: 40,))),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5),
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    'I agree to ',
+                                    style: TextStyle(fontSize: 14),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {},
+                                    child: Text(
+                                      'Terms of Use',
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.red.shade800),
+                                    ),
+                                    style: ButtonStyle(
+                                      padding: MaterialStateProperty.all(
+                                          EdgeInsets.zero),
+                                    ),
+                                  ),
+                                  Text(
+                                    ' or ',
+                                    style: TextStyle(fontSize: 14),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {},
+                                    child: Text(
+                                      'Privacy Policy',
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.red.shade800),
+                                    ),
+                                    style: ButtonStyle(
+                                      padding: MaterialStateProperty.all(
+                                          EdgeInsets.zero),
+                                    ),
+                                  ),
                                 ],
                               ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Already have an account?",
-                                  style: TextStyle(color: Colors.grey),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    height: 1,
+                                    width: 100,
+                                    color: Colors.grey,
+                                    margin: EdgeInsets.symmetric(horizontal: 10),
+                                  ),
+                                  Text(
+                                    "Or Sign in with",
+                                    style: TextStyle(color: Colors.grey),
+                                  ),
+                                  Container(
+                                    height: 1,
+                                    width: 100,
+                                    color: Colors.grey,
+                                    margin: EdgeInsets.symmetric(horizontal: 10),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 90.0, vertical: 20),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    InkWell(
+                                        onTap: () {
+                                          print("button 3");
+                                        },
+                                        child: Container(
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: Colors.white,
+                                                border: Border.all(
+                                                    color: Colors.black26)),
+                                            child: Image.asset(
+                                                "assets/Google.png",width: 40,))),
+                                    InkWell(
+                                        onTap: () {
+                                          print("button 3");
+                                        },
+                                        child: Container(
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: Colors.white,
+                                                border: Border.all(
+                                                    color: Colors.black26)),
+                                            child: Image.asset(
+                                                "assets/FB.png",
+                                            width: 40,))),
+                                    InkWell(
+                                        onTap: () {
+                                          print("button 3");
+                                        },
+                                        child: Container(
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: Colors.white,
+                                                border: Border.all(
+                                                    color: Colors.black26)),
+                                            child: Image.asset(
+                                                "assets/Apple.png",
+                                            width: 40,))),
+                                  ],
                                 ),
-                                TextButton(
-                                    onPressed: () {
-                                      context.go('/sign_in_view');
-                                    },
-                                    child: Text(
-                                      "Sign in",
-                                      style:
-                                          TextStyle(color: Colors.red.shade800),
-                                    ))
-                              ],
-                            )
-                          ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Already have an account?",
+                                    style: TextStyle(color: Colors.grey),
+                                  ),
+                                  TextButton(
+                                      onPressed: () {
+                                        context.go('/sign_in_view');
+                                      },
+                                      child: Text(
+                                        "Sign in",
+                                        style:
+                                            TextStyle(color: Colors.red.shade800),
+                                      ))
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     )

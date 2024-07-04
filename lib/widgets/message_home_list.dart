@@ -40,7 +40,7 @@ class _MessageListViewState extends State<MessageListView> {
         child: Row(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Container(
                 height: 60,
                 width: 60,

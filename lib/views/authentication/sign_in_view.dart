@@ -151,14 +151,14 @@ class _SignInState extends State<SignIn> {
                                 height: 1,
                                 width: 100,
                                 color: Colors.grey,
-                                margin: EdgeInsets.symmetric(horizontal: 10),
+                                margin: EdgeInsets.symmetric(horizontal: 7),
                               ),
                               Text("Or Sign up with",style: TextStyle(color: Colors.grey),),
                               Container(
                                 height: 1,
                                 width: 100,
                                 color: Colors.grey,
-                                margin: EdgeInsets.symmetric(horizontal: 10),
+                                margin: EdgeInsets.symmetric(horizontal: 7),
                               ),],
                           ),
                           Padding(

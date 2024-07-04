@@ -179,7 +179,7 @@ class _HomeDetailsViewState extends State<HomeDetailsView> {
                               Icons.shower_outlined,
                               color: ThemeColor.apptheame,
                             ),
-                            SizedBox(width: 5.0),
+                            SizedBox(width: 3.0),
                             Text(
                               "1 Bathroom",
                               style: TextStyle(color: ThemeColor.apptheame),
@@ -464,7 +464,7 @@ class _HomeDetailsViewState extends State<HomeDetailsView> {
                         ),
                       ),
                       const Padding(
-                        padding: EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(3.0),
                         child: Text(
                           "Lorem Ipsum has been the industry's standard dummy text \never since the 1500s, when an unknown printer took a galley\n of type and scrambled it to make a type specimen book.,",
                           style: TextStyle(
